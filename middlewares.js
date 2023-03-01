@@ -21,6 +21,9 @@ const fetchTodosMiddleware = (store) => (next) => async (action) => {
             type: "todos/todoLoaded",
             payload: todos,
         });
+        console.log(
+            `Number of updated todos: ${store.getState().todos.length}`
+        );
         return;
     }
     return next(action);
